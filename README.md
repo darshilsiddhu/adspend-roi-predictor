@@ -44,11 +44,6 @@ joblib (model serialization)
 
 Running it locally
 
-bashgit clone https://github.com/yourusername/adspend-roi-predictor.git
-cd adspend-roi-predictor
-pip install -r requirements.txt
-streamlit run app.py
-
 The app opens at http://localhost:8501
 
 
