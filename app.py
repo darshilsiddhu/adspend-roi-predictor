@@ -5,14 +5,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# ── page config ──────────────────────────────────────────────────────────────
-st.set_page_config(
+
     page_title="Ad Spend ROI Predictor",
     page_icon="📊",
     layout="centered"
 )
 
-# ── load model ────────────────────────────────────────────────────────────────
+
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")
 
 @st.cache_resource
@@ -29,7 +28,7 @@ CHANNEL_LABELS = [
     "Affiliate Impressions",
 ]
 
-# ── header ────────────────────────────────────────────────────────────────────
+
 st.title("📊 Ad Spend ROI Predictor")
 st.markdown(
     "Enter your weekly impressions across each marketing channel "
@@ -38,7 +37,6 @@ st.markdown(
 )
 st.markdown("---")
 
-# ── inputs ────────────────────────────────────────────────────────────────────
 st.subheader("Weekly Channel Impressions")
 
 col1, col2 = st.columns(2)
@@ -55,7 +53,7 @@ with col2:
 st.markdown("---")
 
 # ── predict ───────────────────────────────────────────────────────────────────
-if st.button("🔮 Predict Sales & ROI", use_container_width=True):
+if st.button(" Predict Sales & ROI", use_container_width=True):
 
     input_values  = [paid, google, email, facebook, affiliate]
     features      = np.array([input_values])
